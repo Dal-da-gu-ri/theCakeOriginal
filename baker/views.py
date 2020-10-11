@@ -8,7 +8,7 @@ def index(request):
     return HttpResponse("Index page!")
 
 def login(request):
-    return render(request, 'customer/login_baker.html')
+    return render(request, 'baker/login_baker.html')
 
 def valid(request): #사업자번호확인 -> join
     return HttpResponse("Valid page!")
