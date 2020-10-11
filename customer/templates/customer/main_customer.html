@@ -1,6 +1,26 @@
-{% extends 'base_customer.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>더 케이크</title>
+</head>
 
-{% block content %}
+<body>
+    <div class="header">
+        <img src="/static/img/logo_customer.png" alt="logo_customer">
+        <h1>더 케이크</h1>
+    </div>
+
+    <nav>
+        <button type="button" onclick="location.href='/baker/manageStore'">가게 관리</button>
+        <button type="button" onclick="location.href='/baker/manageCake'">케이크 관리</button>
+        <button type="button" onclick="location.href='/baker/manageOrder'">주문 관리</button>
+        <button type="button" onclick="">로그아웃</button>
+    </nav>
+
 <form method = "POST" action="{% url 'main_customer'%}">
     <div class="form-group">
       <input
@@ -24,5 +44,5 @@
 <script>
   document.getElementById('currentMonth').value= new Date().toISOString().slice(0, 7);
 </script>
-
-{% endblock %}
+</body>
+</html>

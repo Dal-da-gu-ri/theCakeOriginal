@@ -18,3 +18,6 @@ def signUp(request):
 # login에 성공하면 main_customer.html으로 이동!
 def main_customer(request):
     return render(request, 'customer/main_customer.html')
+
+def mypage(request):
+    return render(request, 'customer/mypage.html')

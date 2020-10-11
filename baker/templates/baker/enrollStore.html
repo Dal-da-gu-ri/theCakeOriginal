@@ -2,15 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link href="../resources/css/reset.css" type="text/css" rel="stylesheet">
-    <link href="../resources/css/style.css" type="text/css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://unpkg.com/vue"></script>
+    <title>주문 관리->가게 등록</title>
 
-    <title>store_info_mgmt</title>
     <script type="text/javascript">
     function uploadImgPreview() {
         // @brief 업로드 파일 읽기
@@ -106,30 +102,35 @@
     }
 </script>
 </head>
+
 <body>
+
     <div class="header">
-        <img id="logo" src="../resources/photos/logo_businessperson.png">
+        <img src="/static/img/logo_baker.png" alt="logo_baker">
         <h1>사장님의 더 케이크</h1>
     </div>
 <nav>
     <div class="mgmt">
-        <button class=mgmt-btn type="button" onclick="location.href='store_info_mgmt.html'">가게 관리</button>
+        <button class=mgmt-btn type="button" onclick="location.href='baker/manageStore/enrollStore'">가게 관리</button>
         <div class="mgmt-content">
-            <a href="store_info_mgmt.html">가게 정보 관리</a>
-            <a href="#">가게 영업일 관리</a>
-            <a href="#">메뉴 관리</a>
-            <a href="#">가게 평점 확인</a>
+            <a href="baker/manageStore/enrollStore">가게 등록</a>
+            <a href="baker/manageStore/opendays">가게 영업일 관리</a>
+            <a href="baker/manageStore/storeReview">가게 평점 확인</a>
         </div>
     </div>
 
     <div class="mgmt">
-        <button class="mgmt-btn" type="button" onclick="location.href=order_request_history.html'">주문 관리</button>
+        <button class="mgmt-btn" type="button" onclick="location.href='baker/manageCake/myCakes'">케이크 관리</button>
         <div class="mgmt-content">
-            <a href="order_request_history.html">주문 요청 내역</a>
-            <a href="#">주문 현황</a>
+            <a href="baker/manageCake/myCakes">내 케이크</a>
+            <a href="baker/manageCake/options">케이크 옵션</a>
         </div>
     </div>
-    <button class="mgmt-btn" type="button" onclick="location.href='mypage_businessperson.html'">마이 페이지</button>
+
+    <div class="mgmt">
+        <button class="mgmt-btn" type="button" onclick="location.href='baker/manageOrder'">주문 관리</button>
+    </div>
+    <button class="mgmt-btn" type="button" onclick="location.href='baker/mypage_baker'">마이 페이지</button>
     <button class="mgmt-btn" type="button" onclick="">로그아웃</button>
 </nav>
     <!-- 가게 썸네일 등록 -->
@@ -188,6 +189,5 @@
     </div>
     <button type="submit" id="submit">등록</button>
  </form>
-
 </body>
 </html>

@@ -28,12 +28,22 @@ def idpw_search(request):
 def valid(request): #사업자번호확인 -> join
     return HttpResponse("Valid page!")
 
+# 가게 관리
 def manageStore(request):
     return render(request, 'baker/manageStore.html')
+def enrollStore(request):
+    return render(request, 'baker/enrollStore.html')
+def opendays(request):
+    return render(request, 'baker/opendays.html')
+def storeReview(request):
+    return render(request, 'baker/storeReview.html')
 
+# 케이크 관리
 def manageCake(request):
     return render(request, 'baker/manageCake.html')
 
 def manageOrder(request):
     return render(request, 'baker/manageOrder.html')
 
+def mypage(request):
+    return render(request, 'baker/mypage_baker.html')
