@@ -2,9 +2,95 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>signup_baker</title>
+
+    <style>
+        img{ border:0 none; }
+        form, input{ margin:0;padding:0; }
+        *{
+            box-sizing : border-box;
+            text-align : center;
+            font-family : DX경필명조B;
+        }
+        .header #logo {
+            width: 200px;
+            margin : 50px 0px 0px 0px;
+        }
+	}
+    </style>
 </head>
 <body>
+    <div class="header">
+        <img src="/static/img/logo_baker.png" alt="logo_baker">
+   </div>
+
+        <!--여기를 나중에 백엔드 만들어지면 고쳐야 해요-->
+        <!--데이터 전송하는 부분-->
+ <form method = "POST" action = "#">
+    <div class="form-group">
+      <label for="name_baker">성명</label>
+      <input
+      type="text"
+      class="form-control"
+      id="name_baker"
+      name="name_baker">
+      <!-- 이 name 값으로 정보가 전달된다 -->
+    </div>
+
+    <div class="form-group">
+      <label for="email_baker">이메일</label>
+      <input
+      type="email"
+      class="form-control"
+      id="email_baker"
+      name="name_baker">
+      <!-- 이 name 값으로 정보가 전달된다 -->
+    </div>
+
+    <div class="form-group">
+      <label for="password_baker">비밀번호</label>
+      <input type="password"
+      class="form-control"
+      id="password_baker"
+      placeholder="8자리 이상, 대소문자 포함"
+      name= "password_baker">
+    </div>
+
+
+     <!--고쳐야 해요-->
+    <div class="form-group">
+      <label for="re-password_baker">비밀번호 확인</label>
+      <input type="password"
+      class="form-control"
+      id="re-password_baker"
+      name= "re-password_baker">
+    </div>
+
+    <div class="form-group">
+      <label for="phoneNum_baker">휴대전화</label>
+      <input
+      type="text"
+      class="form-control"
+      id="phoneNum_baker"
+      name="phoneNum_baker">
+      <!-- 이 name 값으로 정보가 전달된다 -->
+    </div>
+
+     <div class="form-group">
+      <label for="businessID_baker">휴대전화</label>
+      <input
+      type="text"
+      class="form-control"
+      id="businessID_baker"
+      name="businessID_baker">
+      <!-- 이 name 값으로 정보가 전달된다 -->
+    </div>
+
+    <button type="submit" id="submit">등록</button>
+ </form>
 
 </body>
 </html>

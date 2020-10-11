@@ -58,7 +58,7 @@ ROOT_URLCONF = 'theCake.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'theCake/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

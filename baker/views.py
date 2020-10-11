@@ -16,15 +16,18 @@ def login(request):
     #person.password = request.GET('password')
     return render(request, 'baker/login_baker.html')
 
+def idpw_search(request):
+    return render(request, 'baker/idpw_search_baker.html')
+
 def valid(request): #사업자번호확인 -> join
     return HttpResponse("Valid page!")
 
 def manageStore(request):
-    return HttpResponse("manageStore page")
+    return render(request, 'baker/manageStore.html')
 
 def manageCake(request):
-    return HttpResponse("manageCake page")
+    return render(request, 'baker/manageCake.html')
 
-def order(request):
-    return HttpResponse("Order page!")
+def manageOrder(request):
+    return render(request, 'baker/manageOrder.html')
 
