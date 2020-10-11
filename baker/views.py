@@ -6,9 +6,15 @@ from django.contrib import auth
 
 from django.http import HttpResponse
 
-#def signUp(request):
-#    if request.method == "POST":
-#        if request.POST["password1"] == request.POST["password2"]:
+def signUp(request):
+    if request.method == 'POST':
+        if request.POST["password1"] == request.POST["confirm"]:
+            bakerUser = Baker.objects.create()
+
+
+            bakerUser.save()
+
+
 
 def login(request):
     #person = Baker
