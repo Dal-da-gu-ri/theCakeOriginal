@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="../resources/css/reset.css" type="text/css" rel="stylesheet">
+    <link href="../resources/css/style.css" type="text/css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login_orderer</title>
+</head>
+<body>
+    <div class="header">
+{% load staticfiles %}
+<img src="{% static "logo_orderer.png" %}" alt="My image">
+        <img id="logo" src="./resources/photos/logo_orderer.png">
+    </div>
+    <div id="login_form">
+        <form method="POST" action="{% url 'login_orderer'%}">
+            {% csrf_token %}
+            <div><input id="email_orderer" type="email" name="email_orderer" placeholder="이메일" aria-required="true "/></div>
+            <div><input id="pw_orderer" type='password' name='pw_orderer' placeholder="패스워드" aria-required="true" /></div>
+            <input id="submit" type='submit' value='LOGIN'/>
+        </form>
+        <a href="idpw_search_orderer.html" id="idpw">ID / PW 찾기</a><br>
+        <a href="signup_orderer.html" id="signup">아직 회원이 아니신가요?</a>
+    </div>
+
+
+</body>
+</html>

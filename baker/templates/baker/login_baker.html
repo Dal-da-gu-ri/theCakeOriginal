@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="../resources/css/reset.css" type="text/css" rel="stylesheet">
+    <link href="../resources/css/style.css" type="text/css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/lodash/lodash.min.js"></script>
+    <title>login_orderer</title>
+</head>
+<body>
+    <div class="header">
+        <img id="logo" src="../resources/photos/logo_orderer.png">
+    </div>
+
+    <div id="dalda">
+        <p>{{ guri }}</p>
+    </div>
+    <script>
+        new Vue({
+            el:'#dalda',
+            data:{
+                guri=1;
+            }
+
+        })
+    </script>
+
+
+    <div id="login_form">
+        <form name="로그인" action="../DB/action.php" method="post">
+            <div><input id="email_orderer" type="email" name="email_orderer" placeholder="이메일" aria-required="true "/></div>
+            <div><input id="password_orderer" type='password' name='password_orderer' placeholder="패스워드" aria-required="true" /></div>
+
+        <a href="idpw_search_orderer.html" id="idpw">ID / PW 찾기</a><br>
+        <a href="signup_orderer.html" id="signup">아직 회원이 아니신가요?</a>
+            <input id="submit" type='submit' value='LOGIN'/>
+        </form>
+    </div>
+
+
+</body>
+</html>

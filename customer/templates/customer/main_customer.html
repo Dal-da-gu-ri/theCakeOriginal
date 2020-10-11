@@ -1,0 +1,28 @@
+{% extends 'polls/base_orderer.html' %}
+
+{% block content %}
+<form method = "POST" action = "signupSave_orderer.php">
+    <div class="form-group">
+      <input
+      type="date"
+      class="form-control"
+      id="pickupDate"
+      name="pickupDate">
+    </div>
+
+    <div class="form-group">
+      <input
+      type="date"
+      class="form-control"
+      id=""
+      name="pickupDate">
+    </div>
+
+  <button type="submit" id="submit">등록</button>
+
+</form>
+<script>
+  document.getElementById('currentMonth').value= new Date().toISOString().slice(0, 7);
+</script>
+
+{% endblock %}
