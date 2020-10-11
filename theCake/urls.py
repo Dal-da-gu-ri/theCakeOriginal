@@ -18,12 +18,11 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('baker/', include('baker.urls')),
     path('customer/', include('customer.urls')),
-    path('thecakeapp/', include('thecakeapp.urls')),
+    path('', include('thecakeapp.urls')),
 ]
 
 # 이미지 URL 설정
