@@ -9,16 +9,14 @@ from django.http import HttpResponse
 def index(request):
     return HttpResponse("Index page!")
 
-def signUp(request):
-    if request.method == "POST":
-        if request.POST["password1"] == request.POST["password2"]:
-
+#def signUp(request):
+#    if request.method == "POST":
+#        if request.POST["password1"] == request.POST["password2"]:
 
 def login(request):
     person = Baker
     person.email = request.GET('email')
     person.password = request.GET('password')
-
     return render(request, 'baker/login_baker.html')
 
 def valid(request): #사업자번호확인 -> join
