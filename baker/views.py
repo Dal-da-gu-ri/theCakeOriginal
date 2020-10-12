@@ -29,8 +29,6 @@ def valid(request): #사업자번호확인 -> join
     return HttpResponse("Valid page!")
 
 # 가게 관리
-def manageStore(request):
-    return render(request, 'baker/manageStore.html')
 def enrollStore(request):
     return render(request, 'baker/enrollStore.html')
 def opendays(request):
@@ -39,8 +37,11 @@ def storeReview(request):
     return render(request, 'baker/storeReview.html')
 
 # 케이크 관리
-def manageCake(request):
-    return render(request, 'baker/manageCake.html')
+def myCakes(request):
+    return render(request, 'baker/myCakes.html')
+def options(request):
+    return render(request, 'baker/options.html')
+
 
 def manageOrder(request):
     return render(request, 'baker/manageOrder.html')
