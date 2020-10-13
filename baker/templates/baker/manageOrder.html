@@ -1,44 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>주문 관리</title>
-</head>
+{% extends 'base_baker.html' %}
 
-<body>
-
-    <div class="header">
-        <img src="/static/img/logo_baker.png" alt="logo_baker">
-        <h1>사장님의 더 케이크</h1>
-    </div>
-
-    <nav>
-        <div class="mgmt">
-            <button class=mgmt-btn type="button" onclick="location.href='baker/manageStore/enrollStore'">가게 관리</button>
-            <div class="mgmt-content">
-                <a href="baker/manageStore/enrollStore">가게 등록</a>
-                <a href="baker/manageStore/opendays">가게 영업일 관리</a>
-                <a href="baker/manageStore/storeReview">가게 평점 확인</a>
-            </div>
-        </div>
-
-        <div class="mgmt">
-            <button class="mgmt-btn" type="button" onclick="location.href='baker/manageCake/myCakes'">케이크 관리</button>
-            <div class="mgmt-content">
-                <a href="baker/manageCake/myCakes">내 케이크</a>
-                <a href="baker/manageCake/options">케이크 옵션</a>
-            </div>
-        </div>
-
-        <div class="mgmt">
-            <button class="mgmt-btn" type="button" onclick="location.href='baker/manageOrder'">주문 관리</button>
-        </div>
-        <button class="mgmt-btn" type="button" onclick="location.href='baker/mypage_baker'">마이 페이지</button>
-        <button class="mgmt-btn" type="button" onclick="">로그아웃</button>
-    </nav>
-    <p>주문관리 페이지입니다.</p>
-</body>
-</html>
+{% block content %}
+<p>manageOrder</p>
+{% endblock %}

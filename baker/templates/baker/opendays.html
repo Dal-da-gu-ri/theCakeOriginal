@@ -1,39 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>가게관리->영업일관리</title>
-</head>
-<body>
-    <div class="header">
-        <img src="/static/img/logo_baker.png" alt="logo_baker">
-        <h1>사장님의 더 케이크</h1>
-    </div>
+{% extends 'base_baker.html' %}
 
-    <nav>
-        <div class="mgmt">
-            <button class=mgmt-btn type="button" onclick="location.href='baker/manageStore/enrollStore'">가게 관리</button>
-            <div class="mgmt-content">
-                <a href="baker/manageStore/enrollStore">가게 등록</a>
-                <a href="baker/manageStore/opendays">영업일 관리</a>
-                <a href="baker/manageStore/storeReview">평점 확인</a>
-            </div>
-        </div>
-
-        <div class="mgmt">
-            <button class="mgmt-btn" type="button" onclick="location.href='baker/manageCake/myCakes'">케이크 관리</button>
-            <div class="mgmt-content">
-                <a href="baker/manageCake/myCakes">내 케이크</a>
-                <a href="baker/manageCake/options">케이크 옵션</a>
-            </div>
-        </div>
-
-        <div class="mgmt">
-            <button class="mgmt-btn" type="button" onclick="location.href='baker/manageOrder'">주문 관리</button>
-        </div>
-        <button class="mgmt-btn" type="button" onclick="location.href='baker/mypage_baker'">마이 페이지</button>
-        <button class="mgmt-btn" type="button" onclick="">로그아웃</button>
-    </nav>
-
-</body>
-</html>
+{% block content %}
+<p>영업일 관리</p>
+{% endblock %}

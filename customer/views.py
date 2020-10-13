@@ -46,19 +46,23 @@ def signup(request):
 
 
 
-def signUp_customer(request):
-    return render(request, 'customer/signup_customer.html')
+def signUp(request):
+    return render(request, 'customer/signUp_customer.html')
 
-def login_customer(request):
+def login(request):
     return render(request, 'customer/login_customer.html')
 
 # login에 성공하면 main_customer.html으로 이동!
-def main_customer(request):
+def main(request):
     return render(request, 'customer/main_customer.html')
 
 def testing(request):
 
     return render(request,'customer/test.html')
 
+def orderlist(request):
+    return render(request, 'customer/orderlist_customer.html')
+
+
 def mypage(request):
-    return render(request, 'customer/mypage.html')
+    return render(request, 'customer/mypage_customer.html')

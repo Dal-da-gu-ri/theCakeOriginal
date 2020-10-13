@@ -1,10 +1,27 @@
-<!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script>https://getbootstrap.com/docs/4.4/getting-started/download/</script>
+    <title>주문자용</title>
 </head>
+
 <body>
+    <div class="header">
+        <img src="/static/img/logo_customer.png" alt="logo_customer">
+        <h1>더 케이크</h1>
+    </div>
+
+    <nav>
+        <button type="button" onclick="location.href='/customer/main">주문하기</button>
+        <button type="button" onclick="location.href='/customer/orderlist'">주문 내역 조회</button>
+        <button type="button" onclick="location.href='/customer/mypage'">My page</button>
+        <button type="button" onclick="">로그아웃</button>
+    </nav>
+{% block content %}
+{% endblock %}
 
 </body>
 </html>

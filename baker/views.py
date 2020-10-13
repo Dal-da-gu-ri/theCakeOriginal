@@ -8,7 +8,8 @@ from django.http import HttpResponse
 
 def signUp(request):
     if request.method == 'POST':
-        if request.POST["password1"] == request.POST["confirm"]:
+        #confirm이 아닌 re-password로 수정함. -예슬
+        if request.POST["password_baker"] == request.POST["re-password_baker"]:
             bakerUser = Baker.objects.create()
 
 

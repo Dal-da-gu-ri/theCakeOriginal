@@ -131,8 +131,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+# 정적 파일을 관리할 루트 static 디렉터리
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'baker', 'static'),
+    os.path.join(BASE_DIR, 'customer', 'static')
+]
+
 
 # 미디어 파일을 관리할 루트 media 디렉터리
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
