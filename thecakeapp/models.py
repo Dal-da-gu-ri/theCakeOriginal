@@ -12,11 +12,11 @@ class Orderer(models.Model):
         return self.email
 
 class Baker(models.Model):
-    businessID = models.CharField(max_length=50, verbose_name='사업자 등록번호',blank=False,primary_key=True)
-    email = models.EmailField(max_length=128, verbose_name='사업자 이메일',null=True,blank=False,unique=True)
-    name = models.CharField(max_length=30, verbose_name='사업자 이름', null=True,blank=False)
-    phoneNum = models.CharField(max_length=30, verbose_name='사업자 전화번호',null=True, blank=False,unique=True)
-    password = models.CharField(max_length=30, verbose_name='사업자 비밀번호', null=True,blank=False)
+    businessID = models.CharField(max_length=10, verbose_name='사업자 등록번호', blank=False, primary_key=True)
+    email = models.EmailField(max_length=128, verbose_name='사업자 이메일', null=True, blank=False, unique=True)
+    name = models.CharField(max_length=30, verbose_name='사업자 이름', null=True, blank=False)
+    phoneNum = models.CharField(max_length=30, verbose_name='사업자 전화번호', null=True, blank=False, unique=True)
+    password = models.CharField(max_length=30, verbose_name='사업자 비밀번호', null=True, blank=False)
 
     def __str__(self):
         return self.email
@@ -34,32 +34,32 @@ class Store(models.Model):
         ('21:00', '21:00'), ('21:30', '21:30'), ('22:00', '22:00'), ('22:30', '22:30'),
     }
 
-    businessID = models.CharField(max_length=50, verbose_name='사업자 등록번호',blank=False,primary_key=True)
-    manager = models.ForeignKey(Baker,on_delete=models.CASCADE)
-    storeName = models.CharField(max_length=30, verbose_name='가게 이름',null=True,blank=False)
-    location = models.CharField(max_length=200, verbose_name='가게 위치',null=True, blank=False)
-    storeContact = models.CharField(max_length=30,verbose_name='가게 연락처',null=True,blank=False,unique=True)
-    storeOpen = models.CharField(max_length=15,verbose_name='가게 오픈 시간',null=True, blank=False,choices=TIME_CHOICES)
-    storeClose = models.CharField(max_length=15,verbose_name='가게 마감 시간',null=True, blank=False,choices=TIME_CHOICES)
-    pickUpOpen = models.CharField(max_length=15,verbose_name='픽업 오픈 시간',null=True, blank=False,choices=TIME_CHOICES)
-    pickUpClose = models.CharField(max_length=15,verbose_name='픽업 마감 시간',null=True, blank=False,choices=TIME_CHOICES)
-    aboutStore = models.TextField(verbose_name='가게 소개글',null=True,blank=True)
-    storeImg = models.ImageField(verbose_name='가게 대표이미지',null=True,blank=True)
-    monday = models.IntegerField(verbose_name='월요일 주문가능 수량',default=0,blank=False)
-    tuesday = models.IntegerField(verbose_name='화요일 주문가능 수량',default=0,blank=False)
-    wednesday = models.IntegerField(verbose_name='수요일 주문가능 수량',default=0,blank=False)
-    thursday = models.IntegerField( verbose_name='목요일 주문가능 수량',default=0,blank=False)
-    friday = models.IntegerField( verbose_name='금요일 주문가능 수량',default=0,blank=False)
-    saturday = models.IntegerField( verbose_name='토요일 주문가능 수량',default=0,blank=False)
-    sunday = models.IntegerField(verbose_name='일요일 주문가능 수량',default=0,blank=False)
+    businessID = models.CharField(max_length=10, verbose_name='사업자 등록번호', blank=False, primary_key=True)
+    manager = models.ForeignKey(Baker, on_delete=models.CASCADE)
+    storeName = models.CharField(max_length=30, verbose_name='가게 이름', null=True, blank=False)
+    location = models.CharField(max_length=200, verbose_name='가게 위치', null=True, blank=False)
+    storeContact = models.CharField(max_length=30, verbose_name='가게 연락처', null=True, blank=False,unique=True)
+    storeOpen = models.CharField(max_length=15, verbose_name='가게 오픈 시간', null=True, blank=False,choices=TIME_CHOICES)
+    storeClose = models.CharField(max_length=15, verbose_name='가게 마감 시간',null=True, blank=False,choices=TIME_CHOICES)
+    pickUpOpen = models.CharField(max_length=15, verbose_name='픽업 오픈 시간',null=True, blank=False,choices=TIME_CHOICES)
+    pickUpClose = models.CharField(max_length=15, verbose_name='픽업 마감 시간',null=True, blank=False,choices=TIME_CHOICES)
+    aboutStore = models.TextField(verbose_name='가게 소개글', null=True, blank=True)
+    storeImg = models.ImageField(verbose_name='가게 대표이미지', null=True, blank=True)
+    monday = models.IntegerField(verbose_name='월요일 주문가능 수량', default=0, blank=False)
+    tuesday = models.IntegerField(verbose_name='화요일 주문가능 수량', default=0, blank=False)
+    wednesday = models.IntegerField(verbose_name='수요일 주문가능 수량', default=0, blank=False)
+    thursday = models.IntegerField(verbose_name='목요일 주문가능 수량', default=0, blank=False)
+    friday = models.IntegerField(verbose_name='금요일 주문가능 수량', default=0, blank=False)
+    saturday = models.IntegerField(verbose_name='토요일 주문가능 수량', default=0, blank=False)
+    sunday = models.IntegerField(verbose_name='일요일 주문가능 수량', default=0, blank=False)
 
     def __str__(self):
         return self.businessID
 
 class Order(models.Model):
     MONTHS ={
-        ('Jan','1월'),('Feb','2월'),('Mar','3월'),('Apr','4월'),('May','5월'),('Jun','6월'),
-        ('Jul','7월'),('Aug','8월'),('Sep','9월'),('Oct','10월'),('Nov','11월'),('Dec','12월'),
+        ('Jan', '1월'), ('Feb', '2월'), ('Mar', '3월'), ('Apr', '4월'), ('May', '5월'), ('Jun', '6월'),
+        ('Jul', '7월'), ('Aug', '8월'), ('Sep', '9월'), ('Oct', '10월'), ('Nov', '11월'), ('Dec', '12월'),
     }
     #orderNum = models.CharField(max_length=20, verbose_name='주문 번호',primary_key=True) #random하게 하기
     orderNum = models.DateTimeField(auto_now_add=True,verbose_name='주문 번호',primary_key=True,blank=False)

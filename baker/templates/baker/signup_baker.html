@@ -1,3 +1,9 @@
+<!--
+이메일 중복확인 - 버튼 클릭해서 새 창 띄워서 하고 싶음.
+사업자등록번호 유효한 지 - 함수로 확인
+이메일 인증하기 - BACKEND 구역
+-->
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,94 +11,150 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	  <link rel="stylesheet" href="/static/css/signUp_baker.css">
     <title>login_baker</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 
-    <style>
-        img{ border:0 none; }
-        form, input{ margin:0;padding:0; }
-        *{
-            box-sizing : border-box;
-            text-align : center;
-            font-family : DX경필명조B;
-        }
-        .header #logo {
-            width: 200px;
-            margin : 50px 0px 0px 0px;
-        }
-	}
-    </style>
-
-        <!--여기를 나중에 백엔드 만들어지면 고쳐야 해요-->
-        <!--데이터 전송하는 부분-->
-
-<body>
-    <div class="header">
-        <img src="/static/img/logo_baker.png" alt="logo_baker">
-    </div>
- <form method = "POST" action = "{%url 'signUp_baker' %}}">
-    <div class="form-group">
-      <label for="name_baker">성명</label>
+<body class="text-center">
+ <form method = "POST" action = "{%url 'signUp_baker' %}}" class="form-signin">
+     <img class="mb-4" src="/static/img/logo_baker.png" alt="logo_baker" width="141" height="120">
+     {% csrf_token %}
+    <div class="form-inline form-group">
+      <label for="name_baker" class="col-sm-4 control-label" >성명</label>
       <input
       type="text"
       class="form-control"
       id="name_baker"
-      name="name_baker">
+      name="name_baker"
+      required>
       <!-- 이 name 값으로 정보가 전달된다 -->
+
     </div>
 
-    <div class="form-group">
-      <label for="email_baker">이메일</label>
+    <div class="form-inline form-group">
+      <label for="email_baker" class="col-sm-4 control-label" >이메일</label>
       <input
       type="email"
       class="form-control"
       id="email_baker"
-      name="email_baker">
+      name="email_baker"
+      required>
+        <i id="img-email" class="fa fa-trash"></i>
+        <input id="btn-email" type="button" value="이메일 중복체크">
       <!-- 이 name 값으로 정보가 전달된다 -->
     </div>
 
-    <div class="form-group">
-      <label for="password_baker">비밀번호</label>
+    <div class="form-inline form-group">
+      <label for="password_baker" class="col-sm-4 control-label" >비밀번호</label>
       <input type="password"
       class="form-control"
       id="password_baker"
       placeholder="8자리 이상, 대소문자 포함"
-      name= "password_baker">
+      name= "password_baker"
+      required>
     </div>
 
-
-     <!--고쳐야 해요-->
-    <div class="form-group">
-      <label for="re-password_baker">비밀번호 확인</label>
+    <div class="form-inline form-group">
+      <label for="re-password_baker" class="col-sm-4 control-label" >비밀번호 확인</label>
       <input type="password"
       class="form-control"
       id="re-password_baker"
-      name= "re-password_baker">
+      placeholder="비밀번호 재입력"
+      name= "re-password_baker"
+      required>
     </div>
+     <div class="alert alert-success" id="alert-success1">비밀번호가 일치합니다.</div>
+     <div class="alert alert-danger" id="alert-danger1">비밀번호가 일치하지 않습니다.</div>
 
-    <div class="form-group">
-      <label for="phoneNum_baker">휴대전화</label>
+    <hr>
+
+    <div class="form-inline form-group">
+      <label for="phoneNum_baker" class="col-sm-4 control-label" >휴대전화</label>
       <input
-      type="text"
+      type="tel"
       class="form-control"
       id="phoneNum_baker"
-      name="phoneNum_baker">
+      placeholder="예) 010-1234-5678"
+      pattern="(010)-\d{3,4}-\d{4}"
+      name="phoneNum_baker"
+      required>
       <!-- 이 name 값으로 정보가 전달된다 -->
     </div>
 
-     <div class="form-group">
-      <label for="businessID">사업자등록번호</label>
+     <div class="form-inline form-group">
+      <label for="businessID" class="col-sm-4 control-label">사업자등록번호</label>
       <input
-      type="number"
-      class="form-control"
+      type="text"
       id="businessID"
-      placeholder="'-'는 제외하고 입력하세요."
-      name="businessID">
+      class="form-control"
+      placeholder="'-'를 제외하고 입력하세요."
+      pattern="\d{10}"
+      name="businessID"
+      required>
       <!-- 이 name 값으로 정보가 전달된다 -->
     </div>
+    <div class="alert alert-success" id="alert-success2">유효한 사업자등록번호입니다.</div>
+    <div class="alert alert-danger" id="alert-danger2">유효하지 않는 사업자등록번호입니다.</div>
 
-    <button type="submit" id="submit">등록</button>
+    <button type='submit' id="submit" class="btn btn-lg btn-secondary btn-block">SIGN UP</button>
  </form>
 </body>
 </html>
+
+<script type="text/javascript">
+    $(function () {
+        $("#alert-success1").hide();
+        $("#alert-danger1").hide();
+        $("#submit").attr("disabled", "disabled");
+
+            $("input").keyup(function() {
+            var pwd1=$("#password_baker").val();
+            var pwd2=$("#re-password_baker").val();
+
+
+            if (pwd1 != "" || pwd2 != "") {
+                if (pwd1 == pwd2) {
+                    $("#alert-success1").show();
+                    $("#alert-danger1").hide();
+                    $("#submit").removeAttr("disabled");
+                } else {
+                    $("#alert-success1").hide();
+                    $("#alert-danger1").show();
+                }
+            }
+        });
+    });
+</script>
+
+<!--
+
+사업자번호 조회 코드
+
+$("#alert-success2").hide();
+        $("#alert-danger2").hide();
+
+        var bisNo=$("#businessID").val();
+            var sum=0;
+            var keyArr=[1, 3, 7, 1, 3, 7, 1, 3, 5];
+            bisNo = (bisNo+'').match(/\d{1}/g))
+for (var i = 0 ; i < 9 ; i++) { sum += (key[i] * Number(bisNo[i])); }
+            var chkSum = 0;
+
+            chkSum = Math.floor(key[8] * Number(bisNo[8]) / 10);
+
+            sum +=chkSum;
+
+            var reminder = (10 - (sum % 10)) % 10;
+            if(reminder==Number(bisNo[9])){
+                $("#alert-success2").show();
+                $("#alert-danger2").hide();
+                $("#submit").removeAttr("disabled");
+            }
+            else {
+                        $("#alert-success2").hide();
+                        $("#alert-danger2").show();
+            }
+-->
