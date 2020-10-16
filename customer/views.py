@@ -4,7 +4,6 @@ from thecakeapp.models import Orderer, Order, Store, Baker, Review, Option, Deta
 # Create your views here.
 
 
-
 def emailValid(request):
     #이메일 저장된거랑 확인해서 중복된거 있는지
     if request.method == 'GET':
