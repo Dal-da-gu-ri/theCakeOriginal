@@ -117,13 +117,12 @@
       required>
       <!-- 이 name 값으로 정보가 전달된다 -->
          <input id="btn-businessID" type="button" value="유효성 체크">
-        <p id="businessID_success">유효한 사업자등록번호입니다.</p>
-        <p id="businessID_fail">유효하지 않는 사업자등록번호입니다.</p>
+        <p id="businessID_success" hidden>유효한 사업자등록번호입니다.</p>
+        <p id="businessID_fail" hidden>유효하지 않는 사업자등록번호입니다.</p>
         <!-- 이 name 값으로 정보가 전달된다 -->
     </div>
-<!--여기 수정되어야 함-->
-<!--check_businessID이 참이면 유효한 사업자등록번호입니다.-->
-<!--check_businessID이 거짓이면 유효하지 않는 사업자등록번호입니다.-->
+<!--여기 수정되어야 함
+check_businessID이 참이면 유효한 사업자등록번호입니다.
      <script>
         $(function(){
             $("#businessID_success").hide();
@@ -133,15 +132,15 @@
                 if (check_businessID==TRUE){
                     $("#businessID_success").show();
                     $("#businessID_fail").hide();
-                else{
+                else {
                     $("#businessID_success").hide();
                     $("#businessID_fail").show();
                 }
             });
         })
      </script>
-    </div>
 
+check_businessID이 거짓이면 유효하지 않는 사업자등록번호입니다.-->
     <button type='submit' id="submit" class="btn btn-lg btn-secondary btn-block">SIGN UP</button>
  </form>
 </body>
@@ -171,33 +170,3 @@
         });
     });
 </script>
-
-<!--
-
-사업자번호 조회 코드
-
-$("#alert-success2").hide();
-        $("#alert-danger2").hide();
-
-        var bisNo=$("#businessID").val();
-            var sum=0;
-            var keyArr=[1, 3, 7, 1, 3, 7, 1, 3, 5];
-            bisNo = (bisNo+'').match(/\d{1}/g))
-for (var i = 0 ; i < 9 ; i++) { sum += (key[i] * Number(bisNo[i])); }
-            var chkSum = 0;
-
-            chkSum = Math.floor(key[8] * Number(bisNo[8]) / 10);
-
-            sum +=chkSum;
-
-            var reminder = (10 - (sum % 10)) % 10;
-            if(reminder==Number(bisNo[9])){
-                $("#alert-success2").show();
-                $("#alert-danger2").hide();
-                $("#submit").removeAttr("disabled");
-            }
-            else {
-                        $("#alert-success2").hide();
-                        $("#alert-danger2").show();
-            }
--->
