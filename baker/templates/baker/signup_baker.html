@@ -1,5 +1,5 @@
 <!--
-이메일 중복확인 - 버튼 클릭해서 새 창 띄워서 하고 싶음.
+이메일 중복확인 - check_email 변수에 담아주세요.
 사업자등록번호 유효한 지 - 함수로 확인
 이메일 인증하기 - BACKEND 구역
 -->
@@ -13,13 +13,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	  <link rel="stylesheet" href="/static/css/signUp_baker.css">
-    <title>login_baker</title>
+    <title>회원가입_baker</title>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 
 <body class="text-center">
- <form method = "POST" action = "{%url 'signUp_baker' %}}" class="form-signin">
+ <form method = "POST" action = "{%url 'signUp_baker' %}}" class="form-signup">
      <img class="mb-4" src="/static/img/logo_baker.png" alt="logo_baker" width="141" height="120">
      {% csrf_token %}
     <div class="form-inline form-group">
@@ -42,10 +42,32 @@
       id="email_baker"
       name="email_baker"
       required>
-        <i id="img-email" class="fa fa-trash"></i>
-        <input id="btn-email" type="button" value="이메일 중복체크">
-      <!-- 이 name 값으로 정보가 전달된다 -->
+        <input id="btn-email" type="button" value="중복체크">
+        <p id="email_success">사용가능한 이메일입니다.</p>
+        <p id="email_fail">중복되는 이메일입니다.</p>
+        <!-- 이 name 값으로 정보가 전달된다 -->
     </div>
+<!--여기 수정되어야 함-->
+<!--check_email이 참이면 사용가능한 이메일입니다.-->
+<!--check_email이 거짓이면 중복되는 이메일입니다.-->
+     <script>
+        $(function(){
+            $("#email_success").hide();
+            $("#email_fail").hide();
+
+            $("#btn-email").click(function(){
+                if (check_email==TRUE){
+                    $("#email_success").show();
+                    $("#email_fail").hide();
+                }
+                else{
+                    $("#email_success").hide();
+                    $("#email_fail").show();
+                }
+            });
+
+        })
+     </script>
 
     <div class="form-inline form-group">
       <label for="password_baker" class="col-sm-4 control-label" >비밀번호</label>
@@ -69,7 +91,6 @@
      <div class="alert alert-success" id="alert-success1">비밀번호가 일치합니다.</div>
      <div class="alert alert-danger" id="alert-danger1">비밀번호가 일치하지 않습니다.</div>
 
-    <hr>
 
     <div class="form-inline form-group">
       <label for="phoneNum_baker" class="col-sm-4 control-label" >휴대전화</label>
@@ -95,9 +116,31 @@
       name="businessID"
       required>
       <!-- 이 name 값으로 정보가 전달된다 -->
+         <input id="btn-businessID" type="button" value="유효성 체크">
+        <p id="businessID_success">유효한 사업자등록번호입니다.</p>
+        <p id="businessID_fail">유효하지 않는 사업자등록번호입니다.</p>
+        <!-- 이 name 값으로 정보가 전달된다 -->
     </div>
-    <div class="alert alert-success" id="alert-success2">유효한 사업자등록번호입니다.</div>
-    <div class="alert alert-danger" id="alert-danger2">유효하지 않는 사업자등록번호입니다.</div>
+<!--여기 수정되어야 함-->
+<!--check_businessID이 참이면 유효한 사업자등록번호입니다.-->
+<!--check_businessID이 거짓이면 유효하지 않는 사업자등록번호입니다.-->
+     <script>
+        $(function(){
+            $("#businessID_success").hide();
+            $("#businessID_fail").hide();
+
+            $("#btn-businessID").click(function(){
+                if (check_businessID==TRUE){
+                    $("#businessID_success").show();
+                    $("#businessID_fail").hide();
+                else{
+                    $("#businessID_success").hide();
+                    $("#businessID_fail").show();
+                }
+            });
+        })
+     </script>
+    </div>
 
     <button type='submit' id="submit" class="btn btn-lg btn-secondary btn-block">SIGN UP</button>
  </form>

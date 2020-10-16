@@ -5,7 +5,7 @@ from . import views
 urlpatterns = [
     # 로그인, 아이디비번찾기, 회원가입
     path('login/', views.login, name='login_customer'),
-    path('idpw_search/', views.idpw_search, name='idpw_search_customer'),
+    # path('idpw_search/', views.idpw_search, name='idpw_search_customer'),
     path('signUp/', views.mypage, name='signUp_customer'),
 
     # 주문하기

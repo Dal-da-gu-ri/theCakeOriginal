@@ -54,3 +54,11 @@ body {
     color: black;
     font-size: 15px;x
 }
+.form-signin p{
+  margin-top: 6px;
+  text-align: left;
+}
+.form-signin a{
+    color: black;
+    font-size: 15px;x
+}
