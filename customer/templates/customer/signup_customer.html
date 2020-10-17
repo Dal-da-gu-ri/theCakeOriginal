@@ -57,13 +57,13 @@
             $("#email_fail").hide();
 
             $("#btn-email").click(function(){
-                if (check_email==TRUE){
+                if ({{check_email}}==TRUE){
                     $("#email_success").show();
-                    $("#email_fail").hide();
+<!--                    $("#email_fail").hide();-->
                 }
                 else{
                     $("#email_success").hide();
-                    $("#email_fail").show();
+<!--                    $("#email_fail").show();-->
                 }
             });
 
