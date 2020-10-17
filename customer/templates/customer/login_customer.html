@@ -12,7 +12,7 @@
 <body class="text-center">
     <form method="POST" action="{% url 'login_customer'%}" class="form-signin">
         <img class="mb-4" src="/static/img/logo_customer.png" alt="logo_customer" width="141" height="120">
-        {% csrf_token %}
+         {% csrf_token %}
         <input type="email" id="email_customer" class="form-control" name="email_customer" placeholder="Email address" aria-required="true"/>
         <input type="password" id="pw_customer" class="form-control" name="pw_customer" placeholder="Password" aria-required="true"/>
         <button type='submit' id="submit" class="btn btn-lg btn-secondary btn-block">LOGIN</button>
