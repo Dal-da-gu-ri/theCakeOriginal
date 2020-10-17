@@ -6,7 +6,9 @@ urlpatterns = [
     # 로그인, 아이디비번찾기, 회원가입
     path('login/', views.login, name='login_customer'),
     # path('idpw_search/', views.idpw_search, name='idpw_search_customer'),
-    path('signUp/', views.mypage, name='signUp_customer'),
+    path('signUp/', views.signUp, name='signUp_customer'),
+
+    path('main/', views.main, name='main_customer'),
 
     # 주문하기
     # 화면에서 위치, 수령일 바꾸고 싶으면 url 바뀌어야..(?)

@@ -2,7 +2,8 @@ from django.shortcuts import render
 from thecakeapp.models import Orderer, Order, Store, Baker, Review, Option, DetailedOption, Cake
 
 # Create your views here.
-
+def main(request):
+    return render(request, 'customer/main_customer.html')
 
 def emailValid(request):
     #이메일 저장된거랑 확인해서 중복된거 있는지
