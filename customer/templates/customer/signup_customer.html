@@ -51,13 +51,14 @@
 <!--여기 수정되어야 함-->
 <!--check_email이 참이면 사용가능한 이메일입니다.-->
 <!--check_email이 거짓이면 중복되는 이메일입니다.-->
+
      <script>
         $(function(){
             $("#email_success").hide();
             $("#email_fail").hide();
 
             $("#btn-email").click(function(){
-                if ({{check_email}}==TRUE){
+                if ({{check_email}}==T){
                     $("#email_success").show();
                     $("#email_fail").hide();
                 }
@@ -66,7 +67,6 @@
                     $("#email_fail").show();
                 }
             });
-
         })
      </script>
 
@@ -118,8 +118,8 @@
         $("#submit").attr("disabled", "disabled");
 
             $("input").keyup(function() {
-            var pwd1=$("#password_baker").val();
-            var pwd2=$("#re-password_baker").val();
+            var pwd1=$("#password_customer").val();
+            var pwd2=$("#re-password_customer").val();
 
 
             if (pwd1 != "" || pwd2 != "") {
