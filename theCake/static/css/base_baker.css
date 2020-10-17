@@ -8,8 +8,6 @@ body {
   padding-top: 4.5rem;
   background-color: #fffcfa;
 }
-
-.container{
-  margin-top: 10px;
+.jumbotron{
+    margin-top: 500px;
 }
-

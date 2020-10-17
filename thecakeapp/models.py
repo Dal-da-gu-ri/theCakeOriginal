@@ -22,36 +22,22 @@ class Baker(models.Model):
         return self.email
 
 class Store(models.Model):
-    TIME_CHOICES = {
-        ('9:00', '9:00'), ('9:30', '9:30'), ('10:00', '10:00'), ('10:30', '10:30'), ('11:00', '11:00'),
-        ('11:30', '11:30'),
-        ('12:00', '12:00'), ('12:30', '12:30'), ('13:00', '13:00'), ('13:30', '13:30'), ('14:00', '14:00'),
-        ('14:30', '14:30'),
-        ('15:00', '15:00'), ('15:30', '15:30'), ('16:00', '16:00'), ('16:30', '16:30'), ('17:00', '17:00'),
-        ('17:30', '17:30'),
-        ('18:00', '18:00'), ('18:30', '18:30'), ('19:00', '19:00'), ('19:30', '19:30'), ('20:00', '20:00'),
-        ('20:30', '20:30'),
-        ('21:00', '21:00'), ('21:30', '21:30'), ('22:00', '22:00'), ('22:30', '22:30'),
-    }
-
     businessID = models.CharField(max_length=10, verbose_name='사업자 등록번호', blank=False, primary_key=True)
     manager = models.ForeignKey(Baker, on_delete=models.CASCADE)
     storeName = models.CharField(max_length=30, verbose_name='가게 이름', null=True, blank=False)
     location = models.CharField(max_length=200, verbose_name='가게 위치', null=True, blank=False)
     storeContact = models.CharField(max_length=30, verbose_name='가게 연락처', null=True, blank=False,unique=True)
-    storeOpen = models.CharField(max_length=15, verbose_name='가게 오픈 시간', null=True, blank=False,choices=TIME_CHOICES)
-    storeClose = models.CharField(max_length=15, verbose_name='가게 마감 시간',null=True, blank=False,choices=TIME_CHOICES)
-    pickUpOpen = models.CharField(max_length=15, verbose_name='픽업 오픈 시간',null=True, blank=False,choices=TIME_CHOICES)
-    pickUpClose = models.CharField(max_length=15, verbose_name='픽업 마감 시간',null=True, blank=False,choices=TIME_CHOICES)
+    pickUpOpen = models.CharField(max_length=15, verbose_name='픽업 오픈 시간',null=True, blank=False)
+    pickUpClose = models.CharField(max_length=15, verbose_name='픽업 마감 시간',null=True, blank=False)
     aboutStore = models.TextField(verbose_name='가게 소개글', null=True, blank=True)
     storeImg = models.ImageField(verbose_name='가게 대표이미지', null=True, blank=True)
-    monday = models.IntegerField(verbose_name='월요일 주문가능 수량', default=0, blank=False)
-    tuesday = models.IntegerField(verbose_name='화요일 주문가능 수량', default=0, blank=False)
-    wednesday = models.IntegerField(verbose_name='수요일 주문가능 수량', default=0, blank=False)
-    thursday = models.IntegerField(verbose_name='목요일 주문가능 수량', default=0, blank=False)
-    friday = models.IntegerField(verbose_name='금요일 주문가능 수량', default=0, blank=False)
-    saturday = models.IntegerField(verbose_name='토요일 주문가능 수량', default=0, blank=False)
-    sunday = models.IntegerField(verbose_name='일요일 주문가능 수량', default=0, blank=False)
+    # monday = models.IntegerField(verbose_name='월요일 주문가능 수량', default=0, blank=False)
+    # tuesday = models.IntegerField(verbose_name='화요일 주문가능 수량', default=0, blank=False)
+    # wednesday = models.IntegerField(verbose_name='수요일 주문가능 수량', default=0, blank=False)
+    # thursday = models.IntegerField(verbose_name='목요일 주문가능 수량', default=0, blank=False)
+    # friday = models.IntegerField(verbose_name='금요일 주문가능 수량', default=0, blank=False)
+    # saturday = models.IntegerField(verbose_name='토요일 주문가능 수량', default=0, blank=False)
+    # sunday = models.IntegerField(verbose_name='일요일 주문가능 수량', default=0, blank=False)
 
     def __str__(self):
         return self.businessID
