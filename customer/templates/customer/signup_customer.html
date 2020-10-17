@@ -18,6 +18,11 @@
 
 
 <body class="text-center">
+    <div class="row mt-5">
+        <div class="col-12">
+            {{check_email}}
+        </div>
+    </div>
  <form method = "POST" action = "{%url 'signUp_customer' %}}" class="form-signup">
      <img class="mb-4" src="/static/img/logo_customer.png" alt="logo_customer" width="141" height="120">
       {% csrf_token %}
@@ -46,18 +51,22 @@
         <input id="btn-email" type="button" value="중복체크">
         <p id="email_success">사용가능한 이메일입니다.</p>
         <p id="email_fail">중복되는 이메일입니다.</p>
+
+
         <!-- 이 name 값으로 정보가 전달된다 -->
     </div>
+
 <!--여기 수정되어야 함-->
 <!--check_email이 참이면 사용가능한 이메일입니다.-->
 <!--check_email이 거짓이면 중복되는 이메일입니다.-->
      <script>
         $(function(){
+            var a = "{{check_email}}";
             $("#email_success").hide();
             $("#email_fail").hide();
 
             $("#btn-email").click(function(){
-                if (check_email==TRUE){
+                if (a==True){
                     $("#email_success").show();
                     $("#email_fail").hide();
                 }
