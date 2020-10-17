@@ -60,12 +60,12 @@ def signUp(request):
         if Orderer.objects.filter(email=email_customer).exists():
             # email_fail
             # validemail = False
-            res_data['check_email'] = "이메일 중복"
+            res_data['check_email'] = "false"
             # return render(request,'customer/signUp_customer.html', {'check_email':validemail})
         else:
             # email_success
             # validemail = True
-            res_data['check_email'] = "이메일 유효"
+            res_data['check_email'] = "true"
             # render(request,'customer/signUp_customer.html',  {'check_email':validemail})
     elif request.method == "POST" and 'submit' in request.POST:
         name_customer = request.POST.get('name_customer', None)
