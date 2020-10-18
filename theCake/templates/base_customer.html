@@ -15,12 +15,7 @@
 
     <!-- Bootstrap core CSS -->
 <!--    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">-->
-
-    <style>
-      body {
-        background-color: #fffcfa;
-      }
-    </style>
+    
     <!-- Custom styles for this template -->
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -30,13 +25,11 @@
   <body>
     <div class="container">
       <!--로고-->
-  <header class="blog-header px-13">
+  <header class="main-header px-13">
     <div class="row flex-nowrap justify-content-between align-items-center">
-
       <div class="mx-auto">
         <img src="/static/img/main_logo_customer.png" alt="주문자 로고" width="400">
       </div>
-
     </div>
 
     <div>
@@ -44,9 +37,16 @@
         <p>Welcome for {{customer.name}}회원님</p>
       </div>
     </div>
-
   </header>
 
+  <nav id="main_nav">
+      <ul class="left">
+          <li><a href="#">주문하기</a></li>
+          <li><a href="#">주문내역조회</a></li>
+          <li><a href="#">My Page</a></li>
+          <li><a href="#">Logout</a></li>
+      </ul>
+  </nav>
 
 
 
@@ -54,22 +54,22 @@
 
 <!-- <div class="nav-scroller py-1 mb-2 main_text"> -->
 
-    <nav class="nav d-flex justify-content-left">
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">가게 관리</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">가게 등록</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">가게 영업일 관리</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">가게 평점 확인</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
+<!--    <nav class="nav d-flex justify-content-left">-->
+<!--      <div class="collapse navbar-collapse" id="navbarCollapse">-->
+<!--        <ul class="navbar-nav mr-auto">-->
+<!--          <li class="nav-item dropdown">-->
+<!--            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">가게 관리</a>-->
+<!--            <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--              <a class="dropdown-item" href="#">가게 등록</a>-->
+<!--              <div class="dropdown-divider"></div>-->
+<!--              <a class="dropdown-item" href="#">가게 영업일 관리</a>-->
+<!--              <div class="dropdown-divider"></div>-->
+<!--              <a class="dropdown-item" href="#">가게 평점 확인</a>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--    </nav>-->
 
 
 <!-- </div> -->

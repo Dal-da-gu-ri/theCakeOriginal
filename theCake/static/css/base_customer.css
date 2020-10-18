@@ -1,26 +1,63 @@
 
-.blog-header {
-  /* height: 3; */
+.main-header {
+  /*height: 3;*/
   line-height: 3;
   border-bottom: 0.8px solid #4e4e4e;
   margin-top: 20px;
 }
 
+body{
+ font-family: DX경필명조B,serif;
+  background-color: #fffcfa;
+}
 /* .blog-header-logo {
 
 } */
 
 .name p{
-  font-size: 13px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-right: 20px;
-  color: #4e4e4e;
-  text-align: right;
+    font-size: 13px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 20px;
+    color: #4e4e4e;
+    text-align: right;
 }
+
+/*
+#main_nav {
+    overflow: hidden;
+    border-bottom: 0.8px solid #4e4e4e;
+    background: #f4f4f43f;
+}
+
+#main_nav > ul.left {
+    overflow: hidden;
+    float: left;
+}
+
+#main_nav > ul.left > li {
+    float:left;
+}
+
+
+#main_nav a {
+    display: block;
+    padding: 10px 20px;
+
+    border-left: 0.8px solid #4e4e4e;
+    border-right: 0.8px solid #4e4e4e;
+    color: #4e4e4e;
+}
+
+#main_nav a:last-child {
+    border-right: 0.8px solid #4e4e4e;
+}
+*/
+
 
 .nav-item{
   margin: 0 20px;
+
 }
 
 .nav-item a{
@@ -78,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: .75rem;
   font-size: .875rem;
 }
-/*
+
 .card-img-right {
   height: 100%;
   border-radius: 0 3px 3px 0;
@@ -93,7 +130,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 768px) {
   .h-md-250 { height: 250px; }
 }
-
+/*
 /* Pagination */
 /* .blog-pagination {
   margin-bottom: 4rem;
