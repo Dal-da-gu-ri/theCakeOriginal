@@ -1,5 +1,5 @@
 <!--customer.name으로 OO회원님 표시-->
-{% load static %}
+ {% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -7,7 +7,6 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!--나중에 css파일 경로 확인-->
     <link rel="stylesheet" href="/static/css/base_customer.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
@@ -15,7 +14,7 @@
 
     <!-- Bootstrap core CSS -->
 <!--    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">-->
-    
+
     <!-- Custom styles for this template -->
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -25,28 +24,32 @@
   <body>
     <div class="container">
       <!--로고-->
-  <header class="main-header px-13">
+  <header class="main-header pt-3 pb-2">
     <div class="row flex-nowrap justify-content-between align-items-center">
-      <div class="mx-auto">
-        <img src="/static/img/main_logo_customer.png" alt="주문자 로고" width="400">
+      <div class="col-4 d-flex">
+        <img src="/static/img/main_logo_customer.png" alt="주문자 로고">
       </div>
-    </div>
-
-    <div>
-      <div class="px-13 name main_text">
+      <div class="name">
         <p>Welcome for {{customer.name}}회원님</p>
       </div>
     </div>
   </header>
 
-  <nav id="main_nav">
+
+
+
+
+
+
+
+  <!-- <nav id="main_nav">
       <ul class="left">
           <li><a href="#">주문하기</a></li>
           <li><a href="#">주문내역조회</a></li>
           <li><a href="#">My Page</a></li>
           <li><a href="#">Logout</a></li>
       </ul>
-  </nav>
+  </nav> -->
 
 
 
