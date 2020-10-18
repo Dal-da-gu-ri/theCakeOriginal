@@ -6,21 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>crnCheck</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	  <link rel="stylesheet" href="/static/css/crnCheck.css">
 
-    <style>
-        img{ border:0 none; }
-        form, input{ margin:0;padding:0; }
-        *{
-            box-sizing : border-box;
-            text-align : center;
-            font-family : DX경필명조B;
-        }
-        .header #logo {
-            width: 200px;
-            margin : 50px 0px 0px 0px;
-        }
-	}
-    </style>
 </head>
 <body>
     <div class="header">
@@ -33,7 +21,7 @@
     </div>
         <!--여기를 나중에 백엔드 만들어지면 고쳐야 해요-->
         <!--데이터 전송하는 부분-->
- <form method = "POST" action = "{% url '%}">
+ <form method = "POST">
      {% csrf_token %}
      <div class="form-inline form-group">
       <label for="businessID" class="col-sm-4 control-label">사업자등록번호</label>
