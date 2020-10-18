@@ -19,10 +19,6 @@
 <header class="blog-header px-13">
     <div class="row flex-nowrap justify-content-between align-items-center">
 
-      <div class="mx-auto">
-        <img src="/static/img/main_logo_customer.png" alt="주문자 로고" width="400">
-      </div>
-
     </div>
 
     <div>
@@ -51,7 +47,7 @@
           <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">케이크 관리</a>
           <div class="dropdown-menu" aria-labelledby="dropdown09">
             <a class="dropdown-item" href="/baker/manageCake/myCakes">내 케이크</a>
-            <a class="dropdown-item" href="/baker/manageStore/opendays">가게 영업일 관리</a>
+            <a class="dropdown-item" href="/baker/manageCake/options">케이크 옵션 관리</a>
           </div>
         </li>
       <li class="nav-item">
@@ -76,15 +72,13 @@
 
 
     <form class="form-inline mt-2 mt-md-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <input class="form-control mr-sm-2" type="text" placeholder="매장명" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </nav>
-  <div class="jumbotron">
     {% block content %}
     {% endblock %}
-  </div>
     </div>
 </body>
 </html>
